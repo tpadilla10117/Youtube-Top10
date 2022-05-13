@@ -1,7 +1,15 @@
-@import './components/form/Form.scss';
-@import './components/ctaButton/CtaButton.scss';
-@import './components/apiResponses/ApiResponses.scss';
-@import './components/heroCarousel/HeroCarousel.scss';
+/* Colors: */ 
+$background-primary: #FF0000; //YouTube Red
+$background-secondary: #FFFFFF; // White
+$background-complement: #F4EEEE; // Isabelline
+$text-primary: #282828; //Almost Black
+$text-secondary: #282828; //Almost Black
+
+/* Font sizes: */
+$heading-primary: 29px;
+$paragraph-primary: 16px;
+$paragraph-secondary: 14px;
+$button-primary: 16px; /* Maybe 14.71... */
 
 * {
   box-sizing: border-box;
@@ -10,24 +18,10 @@
   border: 0;
 }
 
-/* Colors: */ 
-$background-primary: #080A52; //Midnight Blue
-$background-secondary: #FD55AB; // Wild Strawberry
-$background-complement: #F4EEEE; // Isabelline
-$text-primary: #1ac1dd; // Deep Cerise
-$text-secondary: black; //White
-
-/* Font sizes: */
-$heading-primary: 29px;
-$paragraph-primary: 16px;
-$paragraph-secondary: 14px;
-$button-primary: 16px; /* Maybe 14.71... */
-
-
 body {
 
   h1, h2 {
-    font-family: 'Space Grotesk', 'monseratt',sans-serif;
+    font-family: 'Roboto', sans-serif;
     line-height: 1.5;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -35,7 +29,7 @@ body {
   }
 
   p , h3 {
-    font-family: 'Roboto Condensed', 'monseratt', sans-serif;
+    font-family: 'Roboto', 'monseratt', sans-serif;
     line-height: 1.5;
     
   }
@@ -57,4 +51,10 @@ body {
   background-position: bottom;
   /* transition: 0.8s ease-in-out; */
 }
+
+@import './components/form/Form.scss';
+@import './components/ctaButton/CtaButton.scss';
+@import './components/apiResponses/ApiResponses.scss';
+@import './components/heroCarousel/HeroCarousel.scss';
+@import './components/navbar/Navbar.scss';
 

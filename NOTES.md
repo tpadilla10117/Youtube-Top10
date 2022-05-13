@@ -30,6 +30,10 @@ OpenAI: https://beta.openai.com/overview
     - {https://sass-lang.com/install} 
 
 
+<!-- Branding Resources: -->
+    - Youtube Website: { https://www.youtube.com/howyoutubeworks/resources/brand-resources/#logos-icons-and-colors }
+
+
 <!-- General Notes: -->
     - Save some styles to SCSS variables in the parent level SCSS file
     - Fix responsive design to be fully Responsive

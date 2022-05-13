@@ -50,15 +50,11 @@
 
     - Once you have your secret API key you can send requests from your application. Please note that you have $18.00 of free credits - consider using a less expensive model such as “text-curie-001” to ensure that you don’t exceed the limit.
 
-    - Important: You should never expose API keys on the client side in production code because anyone on the internet will have access to your secret key and can make requests with your account. It is however acceptable for the purpose of this application and testing since it won’t be widely available and we don’t expect you to have a backend server.
-
-    - You should consider using environment variables or a key manager to avoid committing your secret API key to your git repository. Check the documentation for your hosting provider for how to do this.
 
 
 ## Tech Stack:
 
 - Node.js, JS, React.js, HTML, SCSS
-- NASA APOD API { https://github.com/nasa/apod-api }
 
 ## Dependencies:
 

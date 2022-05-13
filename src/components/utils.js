@@ -14,3 +14,5 @@
     export { default as CtaButton } from '../components/ctaButton/CtaButton.jsx';
 
     export { default as HeroCarousel } from '../components/heroCarousel/HeroCarousel.jsx';
+
+    export {  default as Navbar } from '../components/navbar/Navbar.jsx';
