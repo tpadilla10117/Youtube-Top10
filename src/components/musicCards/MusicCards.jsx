@@ -17,7 +17,7 @@ import getYouTubeID from 'get-youtube-id';
 
         const opts = {
             height: '390',
-            width: '640',
+            /* width: '640', */
             playerVars: {
               // https://developers.google.com/youtube/player_parameters
               autoplay: 1,
@@ -222,8 +222,15 @@ import getYouTubeID from 'get-youtube-id';
                 sortedTop10Object.map( (songs, index) => {
                     return (
                         <div className='musicCards-card-parent-container' key={index}>
-                            <h3>{songs.title}</h3>
-                            <YouTube videoId={getYouTubeID(songs.titleUrl)} opts={opts} onReady={onPlayerReady} />
+                            <div className='musicCards-card-carousel-wrapper'>
+                                <h3 className='musicCards-card-h3'>{songs.title}</h3>
+                                <YouTube 
+                                    videoId={getYouTubeID(songs.titleUrl)} 
+                                    opts={opts} 
+                                    onReady={onPlayerReady} 
+                                    className='musicCards-card'
+                                />
+                            </div>
                         </div>
                     )
                 })
