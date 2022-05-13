@@ -71,6 +71,14 @@
 - (https://www.npmjs.com/package/react-scroll)
 - (https://react-intersection-observer.vercel.app/?path=/docs/useinview-hook--trigger-once)
 
+### `npm install react-youtube`
+- Simple React component acting as a thin layer over the YouTube IFrame Player API
+- { https://www.npmjs.com/package/react-youtube }
+
+### `npm install get-youtube-id`
+- Parse a youtube url returning the video ID.
+- { https://www.npmjs.com/package/get-youtube-id }
+
 Reference: https://www.freecodecamp.org/news/how-to-use-node-environment-variables-with-a-dotenv-file-for-node-js-and-npm/
 
 - react, react-dom, react-scripts, sass, node-sass, cors
