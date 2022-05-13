@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { youtubeData } from '../../seed';
 
 
@@ -9,6 +9,8 @@ import { youtubeData } from '../../seed';
 
             return initialValue || 'Nothing in Local Storage'
         });
+
+        const [ sortedTop10, setSortedTop10 ] = useState();
 
         /* console.log('Result of topSongs'); */
 
@@ -81,13 +83,56 @@ import { youtubeData } from '../../seed';
             quicksort(arr, pivotIndex + 1, right);
           };
         
-          /* console.log('How to get n elements: ', arr.slice(-3) ) */
         /*Returns TOP 3:  */
           return arr.slice(-10);
-          /* return arr.slice(-3)[0][0]; */ /*Get's the title of the first indexed song  */
+          
         };
         
         /* console.log(quicksort(findSongCountArray(youtubeData) ) ); */
+
+        function splicedOriginalData(arr) {
+
+            let originalData = topSongs;
+            /* console.log('Accessing OriginalData: ', originalData[0].title) */
+            let newArray = [];
+            let finalArray = [];
+          
+           for(let i = 0; i < arr.length; i++) {
+              
+             /*  console.log('The top 10 data occurs here in the original dataset: ', originalData.findIndex(object => {
+                return object.title === arr[i][0]
+              }) ); */
+            
+          
+          /*Finds first index of the top ten in the original data set:  */
+              const indexesOfSongs = originalData.findIndex(object => {
+                return object.title === arr[i][0]
+              }) ;
+             
+          
+              /* console.log('My indexes: ', indexesOfSongs) */
+              newArray.push(indexesOfSongs);
+           }
+              /* console.log("Here is newArray indexes: ", newArray) */
+          
+              for(let j = 0; j < newArray.length; j++) {
+                /* console.log('Here is j: ', newArray[j]) */
+                
+                /* console.log("Result of splice each loop: ", finalArray.push(originalData[newArray[j]]) ); */
+                /* finalArray.push(originalData.splice(newArray[j]) ); */
+                /* finalArray.push(originalData[newArray[j]]) */
+          
+                let theIndexOfTopTenSong = newArray[j];
+                /* console.log("the index of top 10 song: ", theIndexOfTopTenSong);
+                console.log('The data: ', originalData[theIndexOfTopTenSong] ); */
+                
+                let theTopTenSongData = originalData[theIndexOfTopTenSong];
+                finalArray.push(theTopTenSongData);
+                
+              }
+              /* console.log("Here is originalData: ", originalData[7]) */
+              return finalArray;
+          };
 
 
         useEffect( () => {
@@ -100,11 +145,13 @@ import { youtubeData } from '../../seed';
             } else {
                 console.log('My new Top Songs after useEffect!', topSongs);
                 console.log( 'Running quicksort on Top Songs: ', quicksort(topSongs) ); 
+                quicksort(topSongs)
+                /* console.log( 'Running Splice Data: ', splicedOriginalData(quicksort(topSongs)) ) */
                 /* TODO: Quicksort is bringing me back the last 10 songs with incorrect totals */
                 
             }
     
-        },[topSongs]);
+        },[topSongs, quicksort]);
 
         
 
