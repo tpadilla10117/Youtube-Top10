@@ -1,10 +1,16 @@
-import React, { useState } from 'react';
-import { useEffect } from 'react/cjs/react.production.min';
+import React, { useState, useEffect } from 'react';
 import { youtubeData } from '../../seed';
 
 
     function MusicCards() {
-        const [ topSongs, setTopSongs ] = useState();
+        const [ topSongs, setTopSongs ] = useState( () => {
+            const savedYoutubeDataInLocalStorage = localStorage.getItem('youtubeSongs-Count');
+            const initialValue = JSON.parse(savedYoutubeDataInLocalStorage);
+
+            return initialValue || 'Nothing in Local Storage'
+        });
+
+        /* console.log('Result of topSongs'); */
 
         /* 1) This function creates a hashMap of the given dataset,*/
     /* It outputs an array of arrays */
@@ -38,10 +44,20 @@ import { youtubeData } from '../../seed';
     };
 
     findSongCountArray(youtubeData) /* TODO: I get the correct data */
+    console.log('Result of topSongs', topSongs);
 
-    /* useEffect( () => {
-        localStorage.
-    },[topSongs]) */
+    useEffect( () => {
+        /* const savedYoutubeDataInLocalStorage = localStorage.getItem('youtubeSongs-Count');
+        const parsedSavedYoutubeDataInLocalStorage = JSON.parse(savedYoutubeDataInLocalStorage); */
+        
+        if(topSongs === 'Nothing in Local Storage') {
+            console.log('Nothing from the useEffect...')
+            return
+        } else {
+            console.log('My new Top Songs after useEffect!', topSongs)
+        }
+
+    },[topSongs])
 
     function pivot (arr, start=0, end=arr.length-1) {
         let pivot = arr[start][1];
