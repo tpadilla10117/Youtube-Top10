@@ -12,3 +12,5 @@
     export { default as ApiResponses } from '../components/apiResponses/ApiResponses.jsx';
 
     export { default as CtaButton } from '../components/ctaButton/CtaButton.jsx';
+
+    export { default as HeroCarousel } from '../components/heroCarousel/HeroCarousel.jsx';

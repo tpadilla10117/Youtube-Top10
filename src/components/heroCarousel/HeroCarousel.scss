@@ -1,0 +1,255 @@
+.heroCarousel-parent-container {
+    display: flex;
+  /*   align-items: center;
+    justify-content: center; */
+    width: 100%;
+    max-width: 100%;
+    max-height: 100%;
+
+    .heroCarousel-img-slider {
+        position: relative;
+        width: 100%;
+        height: 750px;
+        /* margin: 10px; */
+        /* border: 10px solid yellow; */
+
+        &:before {
+            
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.1) 100% ), linear-gradient(190deg, rgba(0,0,0,0.1) 0%, transparent 100%);
+                z-index: 2;
+                /* border-radius: 5px; */
+        }
+
+        .heroCarousel-slide {
+            z-index: 1;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            /* border: 10px solid red; */
+            clip-path: circle(0% at 0 50%);
+            
+
+            &.active {
+                clip-path: circle(100% at 50% 00%);
+                transition: 1.5s;
+                transition-property: clip-path;
+            }
+            
+
+            img {
+                z-index: 1;
+                width: 100%;
+                height: 100%;
+                /* border-radius: 5px; */
+                object-fit: cover;
+                object-position: center;
+                /* border-radius: 5px; */
+                
+            }
+
+            .heroCarousel-info {
+                position: absolute;
+                top: 0;
+                padding: 15px 30px;
+                
+                h2 {
+                    color: #fff;
+                    letter-spacing: 1px;
+                    text-transform: uppercase;
+                    margin: 10px 0 10px 0;
+                }
+
+                p {
+                    color: #fff;
+                    background: rgba(0, 0, 0, 0.5);
+                    font-size: 16px;
+                    width: 60%;
+                    padding: 10px;
+                    border-radius: 4px;
+                }
+                
+            }
+        }
+
+        .heroCarousel-navigation {
+            z-index: 2;
+            position: absolute;
+            /* border: 10px solid green; */
+            display: flex;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            .heroCarousel-navigation-btn {
+                background: rgba(255, 255, 255, 0.5);
+                width: 12px;
+                height: 12px;
+                margin: 10px;
+                border-radius: 50%;
+                border: .5px solid #fff;
+                cursor: pointer;
+                /* clip-path: circle(100% at 0 50%); */
+
+                &.active {
+                    /* background: $text-primary; */
+                    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+                    /* clip-path: circle(200% at 100% 100%);
+                    transition: 1.5s;
+                    transition-property: clip-path; */
+                    animation: ripple;
+                    animation-duration: .7s;
+                    border: none;
+                    /* transition: 250ms opacity ease-in-out; */
+
+
+                    @keyframes ripple {
+                        from {
+                            transform: scale(0);
+                            opacity: 1;
+                        }
+                        to {
+                            transform: scale(4);
+                            opacity: 0;
+                        }
+                    }
+    
+                }
+
+                &:hover {
+                    /* background: $text-primary; */
+                    transition: .5s ease-in-out;
+                }
+            }
+        }
+    }
+}
+
+
+@media (min-width: 1024px) and (max-width: 1500px) {
+    .heroCarousel-parent-container {
+        padding: 2rem;
+
+        .heroCarousel-img-slider {
+            height: 650px;
+
+            &:before {
+                border-radius: 5px;
+            }
+
+            .heroCarousel-slide {
+                img {
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 820px) {
+
+    .heroCarousel-parent-container {
+
+        .heroCarousel-img-slider {
+            /* width: 600px; */
+            height: 400px;
+
+            .heroCarousel-slide {
+                .heroCarousel-info {
+                    padding: 10px 25px;
+
+                    h2 {
+                        font-size: 35px;
+                    }
+
+                    p {
+                        width: 70%;
+                        /* font-size: 16px; */
+                    }
+                }
+            }
+
+            .heroCarousel-navigation {
+                bottom: 25px;
+
+                .heroCarousel-navigation-btn {
+                    width: 10px;
+                    height: 10px;
+                    margin: 8px;
+                }
+            }
+        }
+    }
+};
+
+@media (max-width: 620px) {
+
+    .heroCarousel-parent-container {
+
+        .heroCarousel-img-slider {
+            /* width: 400px; */
+            height: 400px;
+
+            .heroCarousel-slide {
+                .heroCarousel-info {
+                    padding: 10px 20px;
+
+                    h2 {
+                        font-size: 30px;
+                    }
+
+                    p {
+                        width: 50%;
+                        font-size: 16px;
+                    }
+                }
+            }
+
+            .heroCarousel-navigation {
+                bottom: 15px;
+
+                .heroCarousel-navigation-btn {
+                    width: 8px;
+                    height: 8px;
+                    margin: 6px;
+                }
+            }
+        }
+    }
+};
+
+@media (max-width: 420px) {
+
+    .heroCarousel-parent-container {
+
+        .heroCarousel-img-slider {
+            /* width: 400px; */
+            height: 400px;
+
+            .heroCarousel-slide {
+                .heroCarousel-info {
+                    padding: 5px 10px;
+
+                    h2 {
+                        font-size: 25px;
+                    }
+
+                    p {
+                        width: 50%;
+                        font-size: 11px;
+                    }
+                }
+            }
+
+            .heroCarousel-navigation {
+                bottom: 10px;
+
+            }
+        }
+    }
+};

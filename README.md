@@ -34,7 +34,7 @@
 
 - 1) In the terminal for the project, `npm i dotenv` to install .env.
     1a) Create a .env file
-    1b) `npm i node-modules` In the terminal
+    1b) `npm i` In the terminal
 
 - 2) Create a free account and receive an API Key from  OpenAI:
 
