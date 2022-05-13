@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect/* , useMemo */ } from 'react';
 import { youtubeData } from '../../seed';
 
 
     function MusicCards() {
-        const [ topSongs, setTopSongs ] = useState( () => {
+        const [ topSongs ] = useState( () => {
             const savedYoutubeDataInLocalStorage = localStorage.getItem('youtubeSongs-Count');
             const initialValue = JSON.parse(savedYoutubeDataInLocalStorage);
 
@@ -11,6 +11,7 @@ import { youtubeData } from '../../seed';
         });
 
         const [ sortedTop10, setSortedTop10 ] = useState();
+        const [ sortedTop10Object, setSortedTop10Object ] = useState();
 
         /* console.log('Result of topSongs'); */
 
@@ -97,7 +98,7 @@ import { youtubeData } from '../../seed';
 
         function splicedOriginalData(arr) {
 
-            let originalData = topSongs;
+            let originalData = youtubeData;
             /* console.log('Accessing OriginalData: ', originalData[0].title) */
             let newArray = [];
             let finalArray = [];
@@ -167,14 +168,53 @@ import { youtubeData } from '../../seed';
     
         },[topSongs]);
 
-        
+        useEffect( () => {
+            if(topSongs === 'Nothing in Local Storage' || topSongs === null) {
+                console.log('From second useEffect, topSongs empty!')
+            } else {
+                console.log('2nd useEffect has data in topSongs!')
+                setSortedTop10(quicksort(topSongs) );
+            }
+        },[topSongs]);
 
-        
+        console.log('Here is sortedTop10: ', sortedTop10);
+
+        useEffect( () => {
+            if(sortedTop10 === null || sortedTop10 === undefined) {
+                console.log('Nothing in sortedTop10!')
+            } else {
+                console.log('Running spliced: ', splicedOriginalData(sortedTop10));
+                const finalData = splicedOriginalData(sortedTop10);
+                setSortedTop10Object(finalData);
+            }
+        }, [sortedTop10])
+
+        console.log('Here is my final output: ', sortedTop10Object);
 
 
     return (
-        <section>
-            MusicCards
+        <section className='musicCards-parent-container'>
+            <h1 className='musicCards-h1'>
+                Your Top Tracks of 2022
+            </h1>
+
+            {
+                sortedTop10Object ?
+
+                sortedTop10Object.map( (songs, index) => {
+                    return (
+                        <div className='musicCards-card-parent-container' key={index}>
+                            <p>{songs.title}</p>
+                        </div>
+                    )
+                })
+
+                :
+
+                <div>
+                    <h1>Nothing to Display!</h1>
+                </div>
+            }
 
         </section>
     )
