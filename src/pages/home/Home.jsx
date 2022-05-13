@@ -6,6 +6,7 @@ import {
     MusicCards,
     InfoSection
 } from '../../components/utils.js';
+import Vinyl from '../../assets/vinyl.jpg';
 import { heroCarouselData } from '../../seed';
 
 const HomePage = () => {
@@ -16,14 +17,14 @@ const HomePage = () => {
             <HeroCarousel imgData={heroCarouselData} />
             
             <InfoSection 
-                ptext={'"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. '}
+                ptext={'We all enjoy listening to music '}
                 ptext2={'"Lorem ipsum dolor sit amet, consectetur adipiscing elit.'} 
                 ptext3={'"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'}
-                headingtxt={'Welcome to...'}
+                headingtxt={'2022 So Far...'}
                 infoSectionClassName={'infoSection-parent-container'}
             /* TODO: need to update */
-                /* infoSectionImg={Amanda} */
-                /* alt={'Somne sample text'} */
+                infoSectionImg={Vinyl}
+                alt={'Somne sample text'}
             />
             
         {/*TODO: MusicCards Component */}

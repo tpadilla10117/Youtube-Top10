@@ -71,7 +71,7 @@ function InfoSection( {ptext, ptext2, ptext3, headingtxt, infoSectionClassName, 
             {/* {ptext3} */}
           </p>
 
-      {/* TODO: Where I render a CTA contact button: */}
+      {/* Where I  would render a CTA contact button: */}
           {content ? content : ''}
           
         </div>
