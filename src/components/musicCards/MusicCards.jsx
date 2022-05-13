@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { youtubeData } from '../../seed';
 
 
@@ -70,23 +70,28 @@ import { youtubeData } from '../../seed';
     
       };
 
-      function quicksort(arr, left = 0, right = arr.length - 1) {
-        //Base Case: once the subarrays narrow down to one element:
-          if(left < right) {
-        
-            let pivotIndex = pivot(arr, left, right); //yield 3 with current array
-        
-            //left side:
-            quicksort(arr, left, pivotIndex - 1)
-        
-            //right side:
-            quicksort(arr, pivotIndex + 1, right);
-          };
-        
-        /*Returns TOP 3:  */
-          return arr.slice(-10);
-          
-        };
+        /* const memoizedTop10 = useMemo( () => {
+            return quicksort(topSongs);
+        }, [topSongs]); */
+
+
+        function quicksort(arr, left = 0, right = arr.length - 1) {
+            //Base Case: once the subarrays narrow down to one element:
+            if(left < right) {
+            
+                let pivotIndex = pivot(arr, left, right); //yield 3 with current array
+            
+                //left side:
+                quicksort(arr, left, pivotIndex - 1)
+            
+                //right side:
+                quicksort(arr, pivotIndex + 1, right);
+            };
+            
+            /*Returns TOP 3:  */
+            return arr.slice(-10);
+            
+            };
         
         /* console.log(quicksort(findSongCountArray(youtubeData) ) ); */
 
@@ -134,6 +139,14 @@ import { youtubeData } from '../../seed';
               return finalArray;
           };
 
+        /* const quickSortCallback = useMemo( () => {
+            console.log( "From the callback: ", quicksort(topSongs) );
+            return quicksort(topSongs);
+
+            }, [topSongs, quicksort]
+        ); */
+
+
 
         useEffect( () => {
             /* const savedYoutubeDataInLocalStorage = localStorage.getItem('youtubeSongs-Count');
@@ -144,14 +157,17 @@ import { youtubeData } from '../../seed';
                 return
             } else {
                 console.log('My new Top Songs after useEffect!', topSongs);
-                console.log( 'Running quicksort on Top Songs: ', quicksort(topSongs) ); 
-                quicksort(topSongs)
+                /* console.log( 'Running quicksort on Top Songs: ', quicksort(topSongs) );  */
+                /* quicksort(topSongs) */
                 /* console.log( 'Running Splice Data: ', splicedOriginalData(quicksort(topSongs)) ) */
-                /* TODO: Quicksort is bringing me back the last 10 songs with incorrect totals */
+                
                 
             }
+            
     
-        },[topSongs, quicksort]);
+        },[topSongs]);
+
+        
 
         
 
