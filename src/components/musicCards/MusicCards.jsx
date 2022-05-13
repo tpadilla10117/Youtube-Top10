@@ -1,5 +1,7 @@
 import React, { useState, useEffect/* , useMemo */ } from 'react';
+import YouTube, { YouTubeProps } from 'react-youtube';
 import { youtubeData } from '../../seed';
+import getYouTubeID from 'get-youtube-id';
 
 
     function MusicCards() {
@@ -12,6 +14,22 @@ import { youtubeData } from '../../seed';
 
         const [ sortedTop10, setSortedTop10 ] = useState();
         const [ sortedTop10Object, setSortedTop10Object ] = useState();
+
+        const opts = {
+            height: '390',
+            width: '640',
+            playerVars: {
+              // https://developers.google.com/youtube/player_parameters
+              autoplay: 1,
+            },
+          };
+
+          const onPlayerReady = (event) => {
+            // access to player in all event handlers via event.target
+            event.target.pauseVideo();
+          };
+
+        
 
         /* console.log('Result of topSongs'); */
 
@@ -204,7 +222,8 @@ import { youtubeData } from '../../seed';
                 sortedTop10Object.map( (songs, index) => {
                     return (
                         <div className='musicCards-card-parent-container' key={index}>
-                            <p>{songs.title}</p>
+                            <h3>{songs.title}</h3>
+                            <YouTube videoId={getYouTubeID(songs.titleUrl)} opts={opts} onReady={onPlayerReady} />
                         </div>
                     )
                 })
