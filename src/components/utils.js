@@ -16,3 +16,7 @@
     export { default as HeroCarousel } from '../components/heroCarousel/HeroCarousel.jsx';
 
     export {  default as Navbar } from '../components/navbar/Navbar.jsx';
+
+    export { default as MusicCards } from '../components/musicCards/MusicCards.jsx';
+
+    export { default as InfoSection } from '../components/infoSection/InfoSection.jsx';

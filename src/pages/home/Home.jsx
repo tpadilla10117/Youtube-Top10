@@ -2,7 +2,9 @@ import React from 'react';
 import './Home.scss';
 import {
     HeroCarousel,
-    Navbar
+    Navbar,
+    MusicCards,
+    InfoSection
 } from '../../components/utils.js';
 import { heroCarouselData } from '../../seed';
 
@@ -13,7 +15,19 @@ const HomePage = () => {
             <Navbar />
             <HeroCarousel imgData={heroCarouselData} />
             
-        {/*TODO: Youtube Card Component */}
+            <InfoSection 
+                ptext={'"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor. '}
+                ptext2={'"Lorem ipsum dolor sit amet, consectetur adipiscing elit.'} 
+                ptext3={'"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'}
+                headingtxt={'Welcome to...'}
+                infoSectionClassName={'infoSection-parent-container'}
+            /* TODO: need to update */
+                /* infoSectionImg={Amanda} */
+                /* alt={'Somne sample text'} */
+            />
+            
+        {/*TODO: MusicCards Component */}
+            <MusicCards />
            
         
         </main>

@@ -65,6 +65,12 @@
 
 ### `npm i node-sass` => CSS pre-processor
 
+### `npm i react-intersection-observer`
+
+- React component for animating vertical scrolling
+- (https://www.npmjs.com/package/react-scroll)
+- (https://react-intersection-observer.vercel.app/?path=/docs/useinview-hook--trigger-once)
+
 Reference: https://www.freecodecamp.org/news/how-to-use-node-environment-variables-with-a-dotenv-file-for-node-js-and-npm/
 
 - react, react-dom, react-scripts, sass, node-sass, cors
