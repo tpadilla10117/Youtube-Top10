@@ -46,27 +46,15 @@ import { youtubeData } from '../../seed';
     findSongCountArray(youtubeData) /* TODO: I get the correct data */
     console.log('Result of topSongs', topSongs);
 
-    useEffect( () => {
-        /* const savedYoutubeDataInLocalStorage = localStorage.getItem('youtubeSongs-Count');
-        const parsedSavedYoutubeDataInLocalStorage = JSON.parse(savedYoutubeDataInLocalStorage); */
-        
-        if(topSongs === 'Nothing in Local Storage') {
-            console.log('Nothing from the useEffect...')
-            return
-        } else {
-            console.log('My new Top Songs after useEffect!', topSongs)
-        }
-
-    },[topSongs])
 
     function pivot (arr, start=0, end=arr.length-1) {
         let pivot = arr[start][1];
         let swapIdx = start; //keeps track of how many numbers are less than the pivot, and allows us to swap at the correct index
         //a helper for swaping elements:
         function swap(array, i, j) {
-          let temp = array[i][1];
-          array[i][1] = array[j][1];
-          array[j][1] = temp;
+          let temp = array[i];
+          array[i] = array[j];
+          array[j] = temp;
         };
     
         for (let i = start + 1; i < arr.length; i++) {
@@ -95,12 +83,28 @@ import { youtubeData } from '../../seed';
         
           /* console.log('How to get n elements: ', arr.slice(-3) ) */
         /*Returns TOP 3:  */
-          return arr.slice(-3);
+          return arr.slice(-10);
           /* return arr.slice(-3)[0][0]; */ /*Get's the title of the first indexed song  */
         };
         
         /* console.log(quicksort(findSongCountArray(youtubeData) ) ); */
-        
+
+
+        useEffect( () => {
+            /* const savedYoutubeDataInLocalStorage = localStorage.getItem('youtubeSongs-Count');
+            const parsedSavedYoutubeDataInLocalStorage = JSON.parse(savedYoutubeDataInLocalStorage); */
+            
+            if(topSongs === 'Nothing in Local Storage') {
+                console.log('Nothing from the useEffect...')
+                return
+            } else {
+                console.log('My new Top Songs after useEffect!', topSongs);
+                console.log( 'Running quicksort on Top Songs: ', quicksort(topSongs) ); 
+                /* TODO: Quicksort is bringing me back the last 10 songs with incorrect totals */
+                
+            }
+    
+        },[topSongs]);
 
         
 
