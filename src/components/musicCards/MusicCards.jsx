@@ -5,7 +5,7 @@ import getYouTubeID from 'get-youtube-id';
 
 
     function MusicCards() {
-        const [ topSongs ] = useState( () => {
+        const [ topSongs, setTopSongs ] = useState( () => {
             const savedYoutubeDataInLocalStorage = localStorage.getItem('youtubeSongs-Count');
             const initialValue = JSON.parse(savedYoutubeDataInLocalStorage);
 
@@ -29,19 +29,16 @@ import getYouTubeID from 'get-youtube-id';
             event.target.pauseVideo();
           };
 
-        
 
-        /* console.log('Result of topSongs'); */
-
-        /* 1) This function creates a hashMap of the given dataset,*/
-    /* It outputs an array of arrays */
-    /* 
+/* 1) This function creates a hashMap of the given dataset,*/
+        /* It outputs an array of arrays */
+        /* 
         e.g. [
                 [ 'Watched Super Bass', 1 ],
                 [ 'Watched Treasure', 1 ],
                 [ 'Watched Motivation', 3 ],
             ]
-     */
+        */
 
     function findSongCountArray(arr) {
 
@@ -56,17 +53,14 @@ import getYouTubeID from 'get-youtube-id';
             }
         
         }
-        /* console.log('Object.entries:', Object.entries(hashMap) ) */
+        
         hashMap = Object.entries(hashMap);
-        console.log('My hashMap: ', hashMap);
         const hashMapConvertedToJson = JSON.stringify(hashMap)
         localStorage.setItem('youtubeSongs-Count', hashMapConvertedToJson);
         return hashMap;
     };
 
-    findSongCountArray(youtubeData) /* TODO: I get the correct data */
-    console.log('Result of topSongs', topSongs);
-
+    /* findSongCountArray(youtubeData); */
 
     function pivot (arr, start=0, end=arr.length-1) {
         let pivot = arr[start][1];
@@ -93,7 +87,15 @@ import getYouTubeID from 'get-youtube-id';
             return quicksort(topSongs);
         }, [topSongs]); */
 
-
+/* 2) This function takes the output of findCountSongArray: */
+        /* It outputs a sorted array with the songs with the most views/listens (top 10) resulting at the end */
+        /* 
+        e.g. [
+                [ 'Watched Be Sweet', 18 ],
+                [ 'Watched Paprika', 19 ],
+                [ 'Watched Motion Sickness', 20 ],
+            ]
+        */
         function quicksort(arr, left = 0, right = arr.length - 1) {
             //Base Case: once the subarrays narrow down to one element:
             if(left < right) {
@@ -112,50 +114,36 @@ import getYouTubeID from 'get-youtube-id';
             
             };
         
-        /* console.log(quicksort(findSongCountArray(youtubeData) ) ); */
+/* 3) This function takes the sorted array and splices the result: */
+            /* It outputs an array of objects, */
+            /* The original object of each song in the given JSON file */
 
         function splicedOriginalData(arr) {
 
             let originalData = youtubeData;
-            /* console.log('Accessing OriginalData: ', originalData[0].title) */
             let newArray = [];
             let finalArray = [];
           
            for(let i = 0; i < arr.length; i++) {
-              
-             /*  console.log('The top 10 data occurs here in the original dataset: ', originalData.findIndex(object => {
-                return object.title === arr[i][0]
-              }) ); */
-            
-          
+                
           /*Finds first index of the top ten in the original data set:  */
               const indexesOfSongs = originalData.findIndex(object => {
                 return object.title === arr[i][0]
               }) ;
              
-          
-              /* console.log('My indexes: ', indexesOfSongs) */
               newArray.push(indexesOfSongs);
-           }
-              /* console.log("Here is newArray indexes: ", newArray) */
+           };
           
-              for(let j = 0; j < newArray.length; j++) {
-                /* console.log('Here is j: ', newArray[j]) */
-                
-                /* console.log("Result of splice each loop: ", finalArray.push(originalData[newArray[j]]) ); */
-                /* finalArray.push(originalData.splice(newArray[j]) ); */
-                /* finalArray.push(originalData[newArray[j]]) */
-          
+            for(let j = 0; j < newArray.length; j++) {
+    
                 let theIndexOfTopTenSong = newArray[j];
-                /* console.log("the index of top 10 song: ", theIndexOfTopTenSong);
-                console.log('The data: ', originalData[theIndexOfTopTenSong] ); */
-                
+            
                 let theTopTenSongData = originalData[theIndexOfTopTenSong];
                 finalArray.push(theTopTenSongData);
-                
-              }
-              /* console.log("Here is originalData: ", originalData[7]) */
-              return finalArray;
+            
+            };
+              
+            return finalArray;
           };
 
         /* const quickSortCallback = useMemo( () => {
@@ -168,21 +156,12 @@ import getYouTubeID from 'get-youtube-id';
 
 
         useEffect( () => {
-            /* const savedYoutubeDataInLocalStorage = localStorage.getItem('youtubeSongs-Count');
-            const parsedSavedYoutubeDataInLocalStorage = JSON.parse(savedYoutubeDataInLocalStorage); */
-            
+           
             if(topSongs === 'Nothing in Local Storage') {
-                console.log('Nothing from the useEffect...')
-                return
+                setTopSongs(findSongCountArray(youtubeData) );
             } else {
-                console.log('My new Top Songs after useEffect!', topSongs);
-                /* console.log( 'Running quicksort on Top Songs: ', quicksort(topSongs) );  */
-                /* quicksort(topSongs) */
-                /* console.log( 'Running Splice Data: ', splicedOriginalData(quicksort(topSongs)) ) */
-                
-                
+                console.log('Already Ran the function chain!')
             }
-            
     
         },[topSongs]);
 
@@ -208,6 +187,7 @@ import getYouTubeID from 'get-youtube-id';
         }, [sortedTop10])
 
         console.log('Here is my final output: ', sortedTop10Object);
+        console.log('Here are top SOngs', topSongs);
 
 
     return (

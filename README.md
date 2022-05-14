@@ -16,7 +16,7 @@
 
 ## Deployment:
 
-- Via Vercel @ { }
+- Via Vercel @ { https://youtube-top10.vercel.app/ }
 
 ## Usage Instructions:
     1) Navigate the page by scrolling
