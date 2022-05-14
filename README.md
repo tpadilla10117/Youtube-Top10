@@ -19,16 +19,8 @@
 - Via Vercel @ { }
 
 ## Usage Instructions:
-    1) Navigate to the deployed URL at: 
-
-    2) Click on the form input field, colored white and immediately after the Page's main title, 'Fun with A.I.'
-
-    3) Type in a prompt.  E.g. "Why are cat's so funny?" 
-
-    4) Once a prompt has been typed out, click the large blue 'Submit' button
-
-    5) Enjoy a response returned by the GPT-3 AI model in the feed at the bottom of the page!
-
+    1) Navigate the page by scrolling
+    2) Click on a video card to watch!
 
 ## Cloning Instructions:
 
