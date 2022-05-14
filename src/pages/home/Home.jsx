@@ -17,9 +17,9 @@ const HomePage = () => {
             <HeroCarousel imgData={heroCarouselData} />
             
             <InfoSection 
-                ptext={'We all enjoy listening to music '}
-                ptext2={'"Lorem ipsum dolor sit amet, consectetur adipiscing elit.'} 
-                ptext3={'"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'}
+                ptext={'You listened to 5691 songs this year, but there was clearly a pattern to your listening...'}
+                ptext2={'While everyone was trying to figure out what was going on with crypto, the stock market, NFTs, and the rest of the world, you had 10 songs on repeat'} 
+                ptext3={'There were 10 songs that lived in your head rent free during the year so far:'}
                 headingtxt={'2022 So Far...'}
                 infoSectionClassName={'infoSection-parent-container'}
             /* TODO: need to update */

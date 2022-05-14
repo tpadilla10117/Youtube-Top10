@@ -35,7 +35,7 @@ body {
   }
 
   h3 {
-    color: #fff;
+    color: $text-primary;
   }
 
   p {
@@ -58,4 +58,5 @@ body {
 @import './components/heroCarousel/HeroCarousel.scss';
 @import './components/navbar/Navbar.scss';
 @import './components/infoSection/InfoSection.scss';
+@import './components/musicCards/MusicCards.scss';
 

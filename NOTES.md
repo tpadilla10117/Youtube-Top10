@@ -1,14 +1,8 @@
 <!-- Sample web service requests: -->
-OpenAI: https://beta.openai.com/overview
+
 
 <!-- Objectives: -->
-    1) Fetch data from OpenAI API [x]
-    2) Display a form that takes in a prompt as a submission [x]
-    3) Styling [x]
-    4) Results displayed in a list, sorted from newest to oldest. Each including original prompt and a response from the API. [x]
-    5) Save responses if the user leaves or reloads the page [x]
    
-
 
 <!-- Structure: -->
     src

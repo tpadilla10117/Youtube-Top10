@@ -1,8 +1,8 @@
 # App Description
 
-- An application that uses the GPT-3 AI model created by OpenAI { https://openai.com/api/ }.  The model can process plain text prompts and produce outputs not dissimilar to human writing.
+- An application that interacts with JSON data of a Youtube listening history.
 
-- In this application, users can type in a prompt (e.g. Write a poem about Dinosaurs, I think cats are cute, etc.) in a form input field.  Once a prompt is submitted via the 'Submit' button on the graphical interface, the GPT-3 will be reached via the text-curie-001 API and will respond with an interpreted output.
+- In this application, users can view the media of the top 10 songs that were listened to according to the input data.
 
 ## Table of Contents:
 * [Deployment](#Deployment)
@@ -16,7 +16,7 @@
 
 ## Deployment:
 
-- Via Vercel @ {https://fun-with-gpt-3-g3zzqyhi1-tpadilla10117.vercel.app/ }
+- Via Vercel @ { }
 
 ## Usage Instructions:
     1) Navigate to the deployed URL at: 
@@ -32,25 +32,11 @@
 
 ## Cloning Instructions:
 
-- 1) In the terminal for the project, `npm i dotenv` to install .env.
-    1a) Create a .env file
-    1b) `npm i` In the terminal
-
-- 2) Create a free account and receive an API Key from  OpenAI:
-
-    - 2a) Go to https://beta.openai.com/signup
-    - 2b) Enter your email address and password
-    - 2c) Verify your email address
-    - 2d) Verify your phone number by entering the code that is sent to you via SMS
-    - 2e) Once logged in, go to https://beta.openai.com/account/api-keys to get your secret API key
-
-- 3) Save your secret API Key in your .env file -> ***be sure to add your .env to a .gitignore file to avoid commiting the key publically to a repo!***
+- 1) In the terminal for the project,  `npm i` to install node modules
 
 - NOTES:
 
-    - Once you have your secret API key you can send requests from your application. Please note that you have $18.00 of free credits - consider using a less expensive model such as “text-curie-001” to ensure that you don’t exceed the limit.
-
-
+    - N/A
 
 ## Tech Stack:
 
@@ -71,23 +57,28 @@
 - (https://www.npmjs.com/package/react-scroll)
 - (https://react-intersection-observer.vercel.app/?path=/docs/useinview-hook--trigger-once)
 
+### `npm install react-youtube`
+- Simple React component acting as a thin layer over the YouTube IFrame Player API
+- { https://www.npmjs.com/package/react-youtube }
+
+### `npm install get-youtube-id`
+- Parse a youtube url returning the video ID.
+- { https://www.npmjs.com/package/get-youtube-id }
+
 Reference: https://www.freecodecamp.org/news/how-to-use-node-environment-variables-with-a-dotenv-file-for-node-js-and-npm/
 
 - react, react-dom, react-scripts, sass, node-sass, cors
 
 ## Limitations & Ideas For Improvement:
 
-- As of 05/12/22:
+- As of 05/13/22:
 
-    - Reset the form field once a user clicks the 'Submit' button
     - App is MOSTLY responsive; should make fully responsive
-    - Let the user choose the AI engine from a select box
-    - Add some presets for the user to quickly send a good prompt
     - Make the app more specific to a single purpose. See the OpenAI Examples and prompt design docs for inspiration.
 
 
 ## TroubleShooting & Bugs:
-    - **NOTE: UI form field doesn't clear upon submitting a prompt
+    - **NOTE:
     - **NOTE: 
 
 ## Getting Started with Create React App

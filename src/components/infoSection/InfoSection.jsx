@@ -51,25 +51,25 @@ function InfoSection( {ptext, ptext2, ptext3, headingtxt, infoSectionClassName, 
 
   return (
     <section className={infoSectionClassName}>
-        <div>
+        <div className='infoSection-wrapper'>
           <h1 ref={headingRef} className={headingIsVisible ? 'infoSection-h1 fadeInUp' : 'infoSection-h1'}>   
             { headingIsVisible ? headingtxt : ''}
           </h1>
 
-          <p ref={paragraph1Ref} className={isVisible ? 'infoSection-p1 fadeInUp active' : 'infoSection-p1'} >
+          <h3 ref={paragraph1Ref} className={isVisible ? 'infoSection-p1 fadeInUp active' : 'infoSection-p1'} >
           { isVisible ? ptext : ''}
             {/* {ptext} */}
-          </p>
+          </h3>
           <br/>
-          <p ref={paragraph2Ref} className={isVisible2 ? 'infoSection-p2 fadeInUp active' : 'infoSection-p2'}>
+          <h3 ref={paragraph2Ref} className={isVisible2 ? 'infoSection-p2 fadeInUp active' : 'infoSection-p2'}>
           { isVisible2 ? ptext2 : ''}
             {/* {ptext2} */}
-          </p>
+          </h3>
           <br/>
-          <p ref={paragraph3Ref} className={isVisible3 ? 'infoSection-p3 fadeInUp active' : 'infoSection-p3'}>
+          <h3 ref={paragraph3Ref} className={isVisible3 ? 'infoSection-p3 fadeInUp active' : 'infoSection-p3'}>
           { isVisible3 ? ptext3 : ''}
             {/* {ptext3} */}
-          </p>
+          </h3>
 
       {/* Where I  would render a CTA contact button: */}
           {content ? content : ''}
