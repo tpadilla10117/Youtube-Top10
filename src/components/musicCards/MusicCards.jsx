@@ -1,5 +1,5 @@
 import React, { useState, useEffect/* , useMemo */ } from 'react';
-import YouTube, { YouTubeProps } from 'react-youtube';
+import YouTube from 'react-youtube';
 import { youtubeData } from '../../seed';
 import getYouTubeID from 'get-youtube-id';
 
