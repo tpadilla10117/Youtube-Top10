@@ -16,7 +16,7 @@ import getYouTubeID from 'get-youtube-id';
         const [ sortedTop10Object, setSortedTop10Object ] = useState();
 
         const opts = {
-            height: '390',
+            /* height: '390', */
             /* width: '640', */
             playerVars: {
               // https://developers.google.com/youtube/player_parameters

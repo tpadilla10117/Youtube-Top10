@@ -56,20 +56,20 @@ function InfoSection( {ptext, ptext2, ptext3, headingtxt, infoSectionClassName, 
             { headingIsVisible ? headingtxt : ''}
           </h1>
 
-          <h3 ref={paragraph1Ref} className={isVisible ? 'infoSection-p1 fadeInUp active' : 'infoSection-p1'} >
+          <p ref={paragraph1Ref} className={isVisible ? 'infoSection-p1 fadeInUp active' : 'infoSection-p1'} >
           { isVisible ? ptext : ''}
             {/* {ptext} */}
-          </h3>
+          </p>
           <br/>
-          <h3 ref={paragraph2Ref} className={isVisible2 ? 'infoSection-p2 fadeInUp active' : 'infoSection-p2'}>
+          <p ref={paragraph2Ref} className={isVisible2 ? 'infoSection-p2 fadeInUp active' : 'infoSection-p2'}>
           { isVisible2 ? ptext2 : ''}
             {/* {ptext2} */}
-          </h3>
+          </p>
           <br/>
-          <h3 ref={paragraph3Ref} className={isVisible3 ? 'infoSection-p3 fadeInUp active' : 'infoSection-p3'}>
+          <p ref={paragraph3Ref} className={isVisible3 ? 'infoSection-p3 fadeInUp active' : 'infoSection-p3'}>
           { isVisible3 ? ptext3 : ''}
             {/* {ptext3} */}
-          </h3>
+          </p>
 
       {/* Where I  would render a CTA contact button: */}
           {content ? content : ''}

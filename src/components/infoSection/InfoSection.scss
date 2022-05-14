@@ -1,6 +1,6 @@
 .infoSection-parent-container {
     width: 100%;
-    height: 500px;
+    height: 100%;
     background-color: $background-complement;
     display: flex;
     flex-direction: column;
@@ -8,6 +8,7 @@
     align-items: flex-start;
     padding: 50px;
     max-height: 100%;
+    margin-bottom: 2rem;
     
 
     @media screen and (min-width: 760px) {
@@ -67,9 +68,9 @@
         height: 100%;
         text-align: left;
         position: relative;
-        border: 1px solid green;
-        /* align-self: center; */
-        /* margin-top: 5px; */
+        /* border: 1px solid green; */
+        align-self: center;
+        margin-right: 2rem;
 
         @media screen and (min-width: 760px) {
             height: 100%;
@@ -105,6 +106,8 @@
             
         }
 
+        
+
         .infoSection-h1.fadeInUp {
             animation: fadeInUp;
             animation-duration: 1s;
@@ -132,16 +135,16 @@
             text-align: left;
 
             @media screen and (min-width: 760px) {
-                font-size: 12px;
+                font-size: 20px;
                 
             }
 
             @media screen and (min-width: 1024px) {
-                font-size: 16px;
+                font-size: 24px;
                 
             }
             @media screen and (min-width: 1366px) {
-                font-size: 20px;
+                font-size: 26px;
                 
             }
         }
