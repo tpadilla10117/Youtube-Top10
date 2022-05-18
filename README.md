@@ -1,8 +1,6 @@
 # App Description
 
-- An application that interacts with JSON data of a Youtube listening history.
-
-- In this application, users can view the media of the top 10 songs that were listened to according to the input data.
+- An application that interacts with JSON data of a Youtube listening history.  In this application, users can view the media of the top 10 songs that were listened to according to the input data.  The output is a Responsive UI that folsk can enjoy! :)
 
 ## Table of Contents:
 * [Deployment](#Deployment)
@@ -19,8 +17,13 @@
 - Via Vercel @ { https://youtube-top10.vercel.app/ }
 
 ## Usage Instructions:
-    1) Navigate the page by scrolling
-    2) Click on a video card to watch!
+    UI:
+        1) Navigate the page by scrolling
+        2) Click on a video card to watch!
+
+    Command Line Outputs:
+        1) `cd` into the project repo and run `node extractTopTen.js` to get a report of
+the top ten songs from the included `data.js` file sorted most to least listened
 
 ## Cloning Instructions:
 
