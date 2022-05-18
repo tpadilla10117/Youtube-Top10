@@ -22,8 +22,7 @@
         2) Click on a video card to watch!
 
     Command Line Outputs:
-        1) `cd` into the project repo and run `node extractTopTen.js` to get a report of
-the top ten songs from the included `data.js` file sorted most to least listened
+        1) `cd` into the project repo and run `node extractTopTen.js` to get a report of the top ten songs from the included `data.js` file sorted most to least listened
 
 ## Cloning Instructions:
 
