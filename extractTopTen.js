@@ -96,3 +96,8 @@ function splicedOriginalData(arr) {
 };
   
 console.dir({ result: splicedOriginalData( quicksort ( findSongCountArray(youtubeData) ) ) } );
+module.exports = {
+    pivot,
+    quicksort,
+    splicedOriginalData
+};
