@@ -1,6 +1,6 @@
 # App Description
 
-- An application that interacts with JSON data of a Youtube listening history.  In this application, users can view the media of the top 10 songs that were listened to according to the input data.  The output is a Responsive UI that folsk can enjoy! :)
+- An application that interacts with JSON data of a Youtube listening history.  In this application, users can view the media of the top 10 songs that were listened to according to the input data.  The output is a Responsive UI that folks can enjoy! :)
 
 ## Table of Contents:
 * [Deployment](#Deployment)
