@@ -19,38 +19,29 @@ function findSongCountArray(arr) {
   };
 
 
-  function pivot (arr, start=0, end=arr.length-1) {
-    let pivot = arr[start][1];
-    let swapIdx = start; 
+function pivot (arr, start=0, end=arr.length-1) {
+let pivot = arr[start][1];
+let swapIdx = start; 
 
-    function swap(array, i, j) {
-      let temp = array[i];
-      array[i] = array[j];
-      array[j] = temp;
-    };
+function swap(array, i, j) {
+    let temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+};
 
-    for (let i = start + 1; i < arr.length; i++) {
-      if(pivot > arr[i][1]) {
-        swapIdx++;
-        swap(arr, swapIdx, i);
-      }
+for (let i = start + 1; i < arr.length; i++) {
+    if(pivot > arr[i][1]) {
+    swapIdx++;
+    swap(arr, swapIdx, i);
     }
-    swap(arr, start, swapIdx);
-    return swapIdx;
+}
+swap(arr, start, swapIdx);
+return swapIdx;
 
-  };
-
-/* Quicksort Pseudocode:
-
-  - Call the pivot helper on the array
-  - When the helper returns to you the updated pivot index, recursively call the pviot helper on the subarray to the left of that index, and the subarray to the right of that index
-
-  - your base case occurs when you consider a subarray with less than 2 elements
-
- */
+};
 
 function quicksort(arr, left = 0, right = arr.length - 1) {
-//Base Case: once the subarrays narrow down to one element:
+
   if(left < right) {
 
     let pivotIndex = pivot(arr, left, right); 
