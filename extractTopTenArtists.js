@@ -1,31 +1,36 @@
 /* The input data, required as a module: */
 const youtubeData = require('./youtubedata');
-/* const {
+const {
     quicksort,
 
-} = require('./extractTopTen'); */
+} = require('./extractTopTen');
 
 function findArtistCountArray(arr) {
 
     let hashMap = {};
-    
+  
     for(let songs of arr) {
-        let artistNameReformatted = songs.subtitles[0].name.replace('- Topic', '');
-      
-        if(!hashMap[artistNameReformatted]) {
-          hashMap[artistNameReformatted] = 1
-        } else if(hashMap[artistNameReformatted]) {
-          hashMap[artistNameReformatted]++
+        
+        let found = false;
+
+        if(songs.hasOwnProperty('subtitles') ) {
+            found = true;
         } else {
-            continue
-        }
-      
-      }
+            found = false;
+        };
+        
+        if(found === true && !hashMap[songs.subtitles[0].name.replace('- Topic', '')]) {
+            hashMap[songs.subtitles[0].name.replace('- Topic', '')] = 1
+        } else if (found === true && hashMap[songs.subtitles[0].name.replace('- Topic', '')] ) {
+            hashMap[songs.subtitles[0].name.replace('- Topic', '')]++
+        }; 
+    
+    }
     
     hashMap = Object.entries(hashMap);
     return hashMap;
   };
 
-console.log( findArtistCountArray(youtubeData)    );
+console.dir(  {topTenArtists: quicksort(findArtistCountArray(youtubeData) )   } );
 
 
